@@ -1,0 +1,13 @@
+@import "~bootstrap/dist/css/bootstrap.css";
+
+body {
+   padding-top: 80px; 
+}
+
+.container-fluid{
+	padding: 20px 80px 0px 80px;
+}
+
+.form-control-sm{
+	display: block;
+}

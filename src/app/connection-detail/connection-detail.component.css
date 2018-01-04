@@ -1,0 +1,13 @@
+.form-control-sm {
+	width: 95%;
+	display: block;
+}
+
+.card{
+	width: 22rem;
+	margin: 20px;
+}
+
+.connection{
+	background-color: white;
+}
