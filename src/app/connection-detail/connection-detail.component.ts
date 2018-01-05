@@ -1,4 +1,6 @@
-import {Component, OnInit} from '@angular/core';
+import {Connection} from '../models/connection';
+import {Component, OnInit, Input} from '@angular/core';
+import {NgbModal, NgbActiveModal} from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-connection-detail',
@@ -9,9 +11,17 @@ export class ConnectionDetailComponent implements OnInit {
 
   editing = false;
 
-  constructor() {}
+  @Input()
+  connection: Connection;
+
+  constructor(private modalService: NgbModal) {}
 
   ngOnInit() {
+  }
+
+  editModal() {
+    this.modalService.open(ConnectionDetailComponent);
+    this.editing = true;
   }
 
 }

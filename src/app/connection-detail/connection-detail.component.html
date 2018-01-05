@@ -1,33 +1,27 @@
 <div class="card">
 	<div class="card-body">
-		<form>
+		<form #connectionForm="ngForm">
 			<p>
-				<b>Postrges on ppd</b>
+				<b>{{connection.name}}</b>
+				<img src="assets/svg/pencil.svg" class="edit-button" (click)="editModal()"/>
 			</p>
 			<div class="form-group">
-				<label for="connectionHost">Host</label> <input type="text" readonly
-					class="form-control-sm" id="connectionHost" placeholder="localhost">
+				<label for="connectionHost">Host</label> <input [(ngModel)]="connection.host" type="text" name="host" class="form-control-sm" id="connectionHost" placeholder="localhost" [readOnly]="!editing">
 			</div>
 			<div class="form-group">
-				<label for="connectionPort">Port</label> <input type="number"
-					class="form-control-sm" id="connectionPort" placeholder="1449">
+				<label for="connectionPort">Port</label> <input [(ngModel)]="connection.port" type="number" name="port" class="form-control-sm" id="connectionPort" placeholder="1449" [readOnly]="!editing">
 			</div>
 			<div class="form-group">
-				<label for="exampleInputPassword1">Database</label> <input
-					type="text" class="form-control-sm" id="connectionDatabase"
-					placeholder="user">
+				<label for="exampleInputPassword1">Database</label> <input [(ngModel)]="connection.database" type="text" name="database" class="form-control-sm" id="connectionDatabase" placeholder="user" [readOnly]="!editing">
 			</div>
 			<div class="form-group">
-				<label for="connectionUserName">Username</label> <input type="text"
-					class="form-control-sm" id="connectionUserName" placeholder="admin">
+				<label for="connectionUserName">Username</label> <input [(ngModel)]="connection.username" type="text" name="username" class="form-control-sm" id="connectionUserName" placeholder="admin" [readOnly]="!editing">
 			</div>
 			<div class="form-group">
-				<label for="connectionPassword">Password</label> <input type="text"
-					class="form-control-sm" id="connectionPassword"
-					placeholder="Password">
+				<label for="connectionPassword">Password</label> <input [(ngModel)]="connection.password" type="text" name="password" class="form-control-sm" id="connectionPassword" placeholder="Password" [readOnly]="!editing">
 			</div>
-			<button type="submit" class="btn btn-primary">Submit</button>
-			<button type="button" class="btn">Test</button>
+			<button type="submit" class="btn btn-primary" *ngIf="editing">Ok</button>
+			<button type="button" class="btn" *ngIf="editing">Test</button>
 		</form>
 	</div>
 </div>

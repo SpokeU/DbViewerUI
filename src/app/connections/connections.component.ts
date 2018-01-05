@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { CONNECTIONS } from '../mocks/mocks';
+import {Connection} from '../models/connection';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-connections',
@@ -7,7 +9,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ConnectionsComponent implements OnInit {
 
-  constructor() { }
+
+  connections: Connection[] = CONNECTIONS;
+
+  constructor() {}
 
   ngOnInit() {
   }
